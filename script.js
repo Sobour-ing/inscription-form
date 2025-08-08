@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('registrationForm');
 
-    // Fonction pour valider un champ précis
+    // Fonction pour valider un champ 
     function validateField(fieldId) {
         const value = document.getElementById(fieldId).value.trim();
         const errorSpan = document.getElementById(fieldId + 'Error');
@@ -46,14 +46,14 @@ document.addEventListener('DOMContentLoaded', function () {
         return errorMessage === ''; // true = valide, false = erreur
     }
 
-    // Validation en direct au fur et à mesure de la frappe
+    // Validation en direct au fur et à mesure que je saisis
     ['nom', 'prenom', 'email', 'password', 'confirmpassword'].forEach(id => {
         document.getElementById(id).addEventListener('input', function () {
             validateField(id);
         });
     });
 
-    // Validation checkbox à chaque changement
+    // Validation checkbox à chaque modif
     document.getElementById('terms').addEventListener('change', function () {
         const termsError = document.getElementById('termsError');
         termsError.textContent = this.checked ? '' : 'Vous devez accepter les conditions';
@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', function () {
             isValid = false;
         }
 
-        // Si pas valide, empêcher la soumission
+        // Si pas valide, empêcher la soumission du form.
         if (!isValid) {
             e.preventDefault();
             return false;
         }
 
-        // Si tout est OK, laisser le formulaire se soumettre normalement
-        // Le PHP se chargera de la redirection
+        // Si tout est OK, laisse le formulaire se soumettre normalement
+        // Le PHP fait la redirection
     });
 });
