@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Si l'utilisateur est déjà connecté, rediriger vers l'accueil
+//  user est déjà connecté, partie de la redirection vers acceuil.php
 if (isset($_SESSION['user_id'])) {
     header("Location: acceuil.php");
     exit();
@@ -19,7 +19,7 @@ if (isset($_SESSION['error_message'])) {
     unset($_SESSION['error_message']);
 }
 ?>
-
+// ma page de connexion---amelioration
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -153,4 +153,6 @@ if (isset($_SESSION['error_message'])) {
         </div>
     </form>
 </body>
+
+
 </html>
