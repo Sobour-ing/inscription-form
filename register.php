@@ -1,5 +1,5 @@
 <?php
-session_start(); // Ajout de session_start()
+session_start(); // Ajout de la session : start()
 
 $host = 'localhost';
 $dbname = 'formulaire_inscription tp1';
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    // Validation côté serveur
+    // Validation sur le côté serveur
     $errors = [];
     
     if (empty($nom)) {
@@ -58,7 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("INSERT INTO users (nom, prenom, email, password, date_inscription) 
                                VALUES (?, ?, ?, ?, NOW())");
         if ($stmt->execute([$nom, $prenom, $email, $hashedPassword])) {
-            // Message de succès et redirection vers connexion.php
+            // Message de succès etla  redirection vers la page connexion.
+            
             $_SESSION['success_message'] = "Inscription réussie ! Vous pouvez maintenant vous connecter.";
             header('Location: connexion.php');
             exit();
