@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Configuration de la base de données
+// Configuration de la base de données mysql dans xampp
 $host = 'localhost';
 $dbname = 'formulaire_inscription tp1';
 $username = 'root'; 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
     
-    // Recherche de l'utilisateur par email
+    // Recherche de user  par  son adresse email 
     $stmt = $pdo->prepare("SELECT id, nom, prenom, email, password FROM users WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
