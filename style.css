@@ -1,4 +1,4 @@
-/* Centrer la page et mettre une jolie police */
+/* Centrer la page et mettre une bonne police */
 body {
   font-family: Arial, sans-serif;
   background-color: #bda7a7;
@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 
-/* Style du formulaire */
+/* le style du form */
 form {
   background-color:  rgb(218, 213, 213);
   padding: 20px;
@@ -19,14 +19,14 @@ form {
   max-width: 400px; 
 }
 
-/* Style des étiquettes */
+/* le style des étiquettes */
 label {
   display: inline;
   margin-bottom: 8px;
   font-weight: bolder;
 }
 
-/* Style des champs de saisie */
+/* le style des champs de saisie */
 input[type="text"],
 input[type="email"],
 input[type="password"] 
@@ -39,7 +39,7 @@ input[type="password"]
   box-sizing: border-box;
 }
 
-/* Style du bouton */
+/* le style du bouton */
 button {
   background-color: #f10c0c;
   color: white;
@@ -49,7 +49,7 @@ button {
   cursor: pointer;
   width: 100%;
 }
-/* Style des messages d'erreur */
+/* le style des messages d'erreur */
 .error {
   color: red;
   font-size: 0.9em;
@@ -57,7 +57,7 @@ button {
   margin-bottom: 10px;
   display: inline;
 }
-/* Effet au survol du bouton */ 
+/* un effet au survol  bouton */ 
 button:hover {
   background-color: #746f6f;
 } 
