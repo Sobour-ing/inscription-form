@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Détruire toutes les variables de session
+//  pour deconnecter
 $_SESSION = array();
 
 // Détruire le cookie de session si il existe
@@ -13,10 +13,10 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Détruire la session
+// Déconnecter la session
 session_destroy();
 
-// Rediriger vers la page de connexion avec message
+// Redirection vers la page  connexion avec message
 session_start();
 $_SESSION['success_message'] = "Vous avez été déconnecté avec succès.";
 header("Location: connexion.php");
