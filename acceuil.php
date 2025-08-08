@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Vérifier si l'utilisateur est connecté
+//  ici la verification si user est connecté
 if (!isset($_SESSION['user_id'])) {
     header("Location: connexion.php");
     exit();
@@ -11,7 +11,7 @@ $nom = $_SESSION['user_nom'];
 $prenom = $_SESSION['user_prenom'];
 $email = $_SESSION['user_email'];
 ?>
-
+// Amelioration de ma page d'acceuil html /css
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -162,6 +162,7 @@ $email = $_SESSION['user_email'];
 
     <div class="container">
         <div class="welcome-card">
+
             <div class="emoji">👋</div>
             <div class="welcome-message">
                 Bonjour <?php echo htmlspecialchars($prenom . ' ' . $nom); ?> !
